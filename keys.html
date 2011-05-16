@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+    <head>
+        <title>Key events example (P2PU BGD Task 1)</title>
+        <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+        <style type="text/css">
+
+            *
+            {
+                margin: 0;
+                padding: 0;
+            }
+
+            body
+            {
+                width: 100%;
+                height: 100%;
+            }
+
+        </style>
+        <script type="text/javascript">
+            
+            var keys = {
+                "37" : "left arrow",
+                "38" : "up arrow", 
+                "39" : "right arrow", 
+                "40" : "down arrow"                
+            }
+            
+            function keyupListener(event) {   
+
+                if (keys[event.keyCode] != undefined)
+                {
+                    var element = document.createElement("p");
+                    element.innerHTML = "You pressed " + keys[event.keyCode] + " key...";
+                    window.document.body.appendChild(element);
+                }
+
+            };
+            
+            window.addEventListener('load', function() {
+                
+                window.document.addEventListener('keyup', keyupListener, false);
+
+            }, false);
+            
+        </script>
+    </head>
+    <body>
+        <h1>Key events example (P2PU BGD Task 1)</h1>
+        <p>Press arrow keys to see effect.</p>
+        <p>Tested in Firefox 4 and Chromium 11.</p>
+    </body>    
+</html>
